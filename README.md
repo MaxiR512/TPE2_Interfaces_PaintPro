@@ -1,1 +1,1 @@
-# TPE2_Interfaces_PaintPro
+# TPE2_Interfaces
