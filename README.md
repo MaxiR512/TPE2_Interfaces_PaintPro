@@ -1,9 +1,8 @@
 # TPE2_Interfaces
 
-## A continuación algunos sitios consultados
+ A continuación algunos sitios consultados
 
-### PixelsJs
-#### Repositorio de filtros y preview de como quedarían.
+### Repositorio de filtros y preview de como quedarían "PixelsJs".
 - https://github.com/silvia-odwyer/pixels.js 
 
 
