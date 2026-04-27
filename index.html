@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Pro</title>
+    <link rel="icon" type="image/png" href="/assets/Logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <!-- Botones de filtros -->
+        <aside class="filtros">
+            <h3>Filtros</h3>
+            <button id="byn" class="btn btn-filter">Escala de grises</button>
+            <button id="binarizacion" class="btn btn-filter">Binarización</button>
+            <button id="sepia" class="btn btn-filter">Sepia</button>
+            <button id="invertir" class="btn btn-filter">Invertir Colores</button>
+            <button id="bordes" class="btn btn-filter">Detección de bordes</button>
+            <button id="aberracion" class="btn btn-filter">Aberración cromática</button>
+            <button id="blur" class="btn btn-filter">Desenfoque</button>
+            <button id="pixelArt" class="btn btn-filter">PixelArt</button>
+            <span>Brillo</span>
+            <div class="brillo">
+                <button id="reducirBri" class="btn-filter">​➖</button>
+                <button id="aumentarBri" class="btn-filter">➕</button>
+            </div>
+            <span>Saturación</span>
+            <div class="saturacion">
+                <button id="reducirSat" class="btn-filter">➖</button>
+                <button id="aumentarSat" class="btn-filter">➕</button>
+            </div>
+        </aside>
+
+        <!-- Espacio central para ubicar el canvas y las herramientas-->
+        <main class="principal">
+
+            <canvas id="canvas"></canvas>
+            <div class="herramientas">
+                <button id="lapiz" class="btn"><img src="./assets/lapiz.png" alt="" width="40px"></button>
+                <button id="goma" class="btn"><img src="./assets/goma.png" alt="" width="40px"></button>
+                <div class="grosor">
+                    <span>Grosor del trazo</span>
+                    <input type="range" id="espesor" min="1" max="50" value="5">
+                </div>
+
+                <div class="grosor">
+                    <span>Color</span>
+                    <input type="color" id="color" value="#000000">
+                </div>
+
+                <button id="limpiar" class="btn"><img src="./assets/limpiar.png" alt="limpiar" width="40px"></button>
+            </div>
+        </main>
+
+        <!-- Archivos carga y guardado -->
+        <aside class="archivos">
+            <h3>Archivos</h3>
+            <input type="file" name="imagen" id="cargarImagen" accept="image/*" style="display:none;">
+            <button class="btn btn-action" id="btnCargar">📁 Agregar Imagen</button>
+            <button class="btn btn-action" id="btnGuardar">💾 Guardar Imagen</button>
+            <img src="/assets/Logo.png" alt="logo" class="logo"><img>
+        </aside>
+
+    </div>
+
+    <!-- Confirmación de limpieza -->
+    <dialog id="borrarTodo" class="modal">
+        <h3>¡Cuidado!</h3>
+        <p>¿Seguro que quieres borrar todo? Esta acción no se puede deshacer.</p>
+        <div class="modal-botones">
+            <button id="btnCancelar" class="btn btn-modal">Cancelar</button>
+            <button id="btnConfirmar" class="btn btn-modal">Aceptar</button>
+        </div>
+    </dialog>
+
+    <dialog id="bienvenida" class="modal">
+        <div style="text-align: center;">
+            <img src="/assets/Logo.png" alt="logo" style="width: 80px; margin-top: 0; " class="logo"><img>
+            <h3>Bienvenido a ProPaint</h3>
+        </div>
+        <p>¿Quieres comenzar con un lienzo en blanco o a partir de una imagen?</p>
+        <div class="modal-botones">
+            <button id="btnEnBlanco" class="btn btn-modal">Lienzo en blanco</button>
+            <button id="btnIniciarCarga" class="btn btn-modal">Cargar Imagen</button>
+        </div>
+    </dialog>
+
+
+    <script type="module" src="./js/Lienzo.js"></script>
+</body>
+
+</html>
